@@ -30,3 +30,12 @@
 *.exe
 *.out
 *.app
+
+# Directories
+eph/
+gkernels/
+toolkit/
+
+#eclipse
+.project
+

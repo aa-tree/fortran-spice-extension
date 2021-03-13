@@ -16,7 +16,7 @@ This project requires:
 Note: These steps will be automated in upcoming version of the install script.
 
 
-1. Download this repository. Let's say you store it in */path-to-repo/FORTRAN-SPICEReader*
+1. Download this repository. Let's say you store it in */path-to-repo/fortran-spice-extension/*
 
 1. Download JPL's SPICELIB (FORTRAN) from here: [http://naif.jpl.nasa.gov/pub/naif/toolkit//FORTRAN/PC_Linux_gfortran_64bit/packages/toolkit.tar.Z](http://naif.jpl.nasa.gov/pub/naif/toolkit//FORTRAN/PC_Linux_gfortran_64bit/packages/toolkit.tar.Z)
 
@@ -24,7 +24,7 @@ Note: These steps will be automated in upcoming version of the install script.
 
     - Run 'makeall.csh'.
 
-    - Copy the file */path-to-SPICE-ZIP/toolkit/lib/spicelib.a* to */path-to-repo/FORTRAN-SPICEReader/toolkit/lib/*
+    - Copy the file */path-to-SPICE-ZIP/toolkit/lib/spicelib.a* to */path-to-repo/Ffortran-spice-extension/core/toolkit/lib/*
 
 
 1. Download the following Binary kernels from JPL’s website. These are data files that store the ephemerides. Use FTP, to make this process simple.
@@ -36,12 +36,12 @@ Note: These steps will be automated in upcoming version of the install script.
     - Skip the folder a_old_version.
 
 
-1. Move all these downloaded files to */path-to-repo/FORTRAN-SPICEReader/eph/*
+1. Move all these downloaded files to */path-to-repo/fortran-spice-extension/core/eph/*
 
 
 1. Download all the files in the folder: [https://naif.jpl.nasa.gov/pub/naif/generic_kernels/lsk/](https://naif.jpl.nasa.gov/pub/naif/generic_kernels/lsk/)
 
-1. Move these to */path-to-repo/FORTRAN-SPICEReader/gkernels*
+1. Move these to */path-to-repo/fortran-spice-extension/core/gkernels*
 
 # Examples
 

@@ -1,0 +1,63 @@
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+C
+C		IMAX				INT		Total number of bodies present 
+C									in the ephemeris.
+C									(Listed in /eph/list_of_bodies.csv)
+C
+C 		MMAX				INT		The number of bodies selected in 
+c									the model.
+C
+C		IBC					The ID of the frame of reference.
+C							Defaults to 0, i.e. Solar system Barycentre
+C
+C		LIST_I				Holds the bodies in the models. The two
+C							columns hold ID and ID of the reference body
+C							in the ephemerides.
+C
+C		LIST_EPH			Hold the file names of ephemerides.
+C							Shares the order to LIST_ID_REF.
+C
+C		SYS_TYPE			INTEGER. Holds the type of system.
+C							Possible values:
+C							0: No defined system. (Default)
+C							2: For a two body system.
+C 						3: For RTBP
+C
+C		IPB					ID of primary body in two body system.
+C
+C		PERTURBATION		LOGICAL 	Specifies whether perturbation
+C										output is required or not. 
+C
+C		PERT_ARRAY(6)		REAL*8		Hold the sum of perturbations.
+C
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+		INTEGER :: IMAX, MMAX
+		LOGICAL :: ISPC
+		PARAMETER (ISPC= .FALSE.)
+C       PARAMETER(MMAX=2)
+
+
+
+
+
+		INTEGER MU_LENGTH_2
+		PARAMETER (MU_LENGTH_2=113)
+		PARAMETER (IMAX=180)
+
+		CHARACTER*64 :: LIST_EPH(MMAX), LIST_EPH_IBC(1)
+		INTEGER, DIMENSION(MMAX,2) :: LIST_I
+
+		INTEGER SYS_TYPE, IPB, ISB, IBC
+		
+        LOGICAL PERTURBATION
+		REAL*8 PERT_ARRAY(6)
+		
+		REAL*8 GAUSS_LAST_S_N(3), GAUSS_LAST_CAPS_N(3) 
+
+		COMMON /LIST_ALL/ LIST_I, LIST_EPH, LIST_EPH_IBC
+		COMMON /SYSTEMS/  IPB, ISB , IBC, SYS_TYPE
+
+
+		COMMON /PERT/ PERTURBATION
+		COMMON /GAUSS/ GAUSS_LAST_S_N, GAUSS_LAST_CAPS_N
